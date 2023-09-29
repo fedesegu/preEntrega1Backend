@@ -75,20 +75,21 @@ class ProductManager {
             if (key == "code" && products[prodIndex].code !== update.code) {                        
               const isCodeAlreadyAdded = products.some((prod)=> prod.code === update.code)
               if (isCodeAlreadyAdded) {
-                console.log("Cuidado! el producto ya existe")
+                console.log("Product already exist")
                 return
             }                        
         }
         if (products[prodIndex].hasOwnProperty(key)){
           products[prodIndex][key] = update[key]
         }else{
-          console.log('la propiedad que tratas de cambiar no existe dentro de la DB')
+          console.log('The property that you re trying to change doesnt exist in the DB')
           return
       }                                            
   }
   await fs.promises.writeFile(this.path, JSON.stringify(products))
-  console.log(`El producto con el id: ${id} fue upgradeado`) }else {
-    console.log(`El producto con el id: ${id} no existe`)
+  console.log(`The product with the ID ${id} was upgrade`) 
+    }else {
+    console.log(`The product with the ${id} doesnt exist`)
 }}
 catch (error) {
     return error
