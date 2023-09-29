@@ -20,7 +20,7 @@ class ProductManager {
   async addProduct (product){
     try {
       let {title, description, price, thumbnail, code, stock, status, category} = product
-        if (!title || !description || !price || !stock || !code || !status || !category) {
+        if (!title || !description || !price || !thumbnail || !stock || !code || !status || !category) {
             console.log("Complete all the fields")
             return
         }
